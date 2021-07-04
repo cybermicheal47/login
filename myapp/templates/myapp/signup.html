@@ -1,0 +1,64 @@
+
+
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'myapp/main.html' %}
+
+
+    
+    </head>
+
+<body>
+  <right>
+<div class="containup">
+
+<div class="signup-signup">
+    <form action="{% url 'signup' %}" method="POST" class="sign-up-form"   >
+        {% csrf_token %} 
+        <h2 class="tittle">Sign Up</h2>
+        <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="Username" />
+        </div>
+        <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" name="name" placeholder="full name" />
+    </div>
+
+   
+    </div>
+    <div class="input-field">
+        <i class="fas fa-address"></i>
+        <input type="text" name="occupation" placeholder="occupation" />
+    </div>
+        <div class="input-field">
+            <i class="fas fa-user"></i>
+        <input type="email" name="email" placeholder="email" />
+    </div>
+        <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
+        </div>
+
+        <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="confirm_password" placeholder="Password" />
+        </div>
+        <input type="submit" class="btn solid" value="Signup">
+
+      
+         
+        </div>
+
+    </form>
+</right>
+  <right>
+    <p class="social-text">Already A Member ? .<a href="/signin.html">SignIn</a></p>
+</right>
+    </div>
+    {% endblock %}

@@ -1,0 +1,69 @@
+ 
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    {% include 'myapp/main.html'%}
+</head>
+
+<body>
+  
+<div class="container">
+    <div class="form-container">
+        <div class="signin-signup">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %} 
+                <h2 class="tittle">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password"  id="myInput"
+                    />
+                    <!-- An element to toggle between password visibility -->
+<input type="checkbox" onclick="myFunction()">Show Password 
+                </div>
+                <input type="submit" class="btn solid" value="Login">
+
+                <p class="social-text">Or Sign in with social platforms</p>
+                <div class="social-media">
+                 <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                 </a>
+                 <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                 </a>
+                 <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                 </a>
+                 <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                 </a>
+                 <br/>
+              
+                </div>
+            </form>
+            <p class="social-text">Not A Member Yet ? .<a href="{% url 'signup' %}">Signup</a></p>
+          
+        </div>
+
+
+       
+    </div>
+</div>
+</body>
+
+
+</html>
+
+
+{% endblock %}
+
